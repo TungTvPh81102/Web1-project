@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto:wght@100&display=swap');
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.group {
+    text-align: center;
+}
+
+.group input.checkbox{
+    display: none;
+}
+
+.group .list {
+    display: grid;
+    grid-template-columns: repeat(3,100px);
+    grid-template-rows: repeat(2,100px);
+    gap: 20px;
+}
+
+:root {
+    --blue:#5a5ac6;
+    --light: #bbb;
+}
+
+.group .list .item {
+    border: 1px solid var(--light);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: .5s;
+    position: relative;
+    cursor: pointer;
+}
+
+
+
+.group .list .item .check {
+    position: absolute;
+    top:10px;
+    left: 10px;
+    color: var(--light);
+}
+
+.group .list .item .check i:nth-child(2){
+    display: none;
+    
+}
+
+.group .list .item h2 {
+    margin: 0;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.group .list .item .logo-type {
+    font-size: 33px;
+    margin-bottom: 5px;
+}
+
+input.checkbox:checked + .item {
+    border: 1px solid var(--blue);
+    box-shadow: 0 1px 5px var(--blue);
+    color: var(--blue);
+    transition: .5s;
+}
+
+input.checkbox:checked + .item .check i:nth-child(2){
+    display: block;
+    color: var(--blue);
+}
+
+input.checkbox:checked + .item .check i:nth-child(1){
+    display: none;
+}
+
+.item:hover {
+    color: rgb(245, 107, 107);
+    transition: .5s;
+    transform: translate(0,-10px);
+}
